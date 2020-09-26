@@ -95,6 +95,64 @@ export const constantRoutes = [
  */
 export const asyncRoutes = [
   {
+    path: '/region',
+    component: Layout,
+    redirect: 'noRedirect',
+    alwaysShow: true,
+    name: 'Region',
+    meta: {
+      title: '地区管理',
+      icon: 'el-icon-location'
+    },
+    children: [
+      {
+        path: 'regions',
+        component: () => import('@/views/region/regions'),
+        name: 'Regions',
+        meta: {
+          title: '地区列表',
+          icon: 'el-icon-location',
+          roles: ['admin/Region/regionList']
+        }
+      }
+    ]
+  },
+
+  {
+    path: '/doc',
+    component: Layout,
+    redirect: 'noRedirect',
+    alwaysShow: true,
+    name: 'Doc',
+    meta: {
+      title: '文档管理',
+      icon: 'el-icon-notebook-1'
+    },
+    children: [
+      {
+        path: 'apidoc',
+        component: () => import('@/views/admin/apidoc/apidoc'),
+        name: 'Apidoc',
+        meta: {
+          title: '接口文档',
+          icon: 'el-icon-notebook-1',
+          roles: ['admin/AdminApidoc/apidocList']
+        }
+      },
+      {
+        path: 'devdoc',
+        component: () => import('@/views/admin/devdoc/devdoc'),
+        name: 'Devdoc',
+        meta: {
+          title: '开发文档',
+          icon: 'el-icon-notebook-1',
+          roles: ['admin/AdminDevdoc/devdocList']
+        }
+      }
+    ]
+  },
+
+  {
     path: '/admin',
     component: Layout,
     redirect: 'noRedirect',
