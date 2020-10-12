@@ -1,7 +1,9 @@
 <template>
   <div class="app-container">
     <div class="filter-container">
-      <el-row :gutter="0" />
+      <el-row :gutter="0">
+        <el-col :span="24" />
+      </el-row>
       <back-to-top transition-name="fade" />
     </div>
   </div>
